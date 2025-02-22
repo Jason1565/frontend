@@ -1,0 +1,88 @@
+/* AdminDashBoard.css */
+
+/* 容器样式 */
+.admin-dashboard {
+    padding: 20px;
+    font-family: Arial, sans-serif;
+    background-color: #f9f9f9;
+    width: 100%;
+  }
+
+  .admin-dashboard hr{
+    border: 0; /* 移除默认边框 */
+    border-top: 2px solid black; /* 添加新的上边框 */
+    width: 100%; /* 横线宽度 */
+  }
+
+
+  
+  .admin-dashboard h2 {
+    font-size: 22px;
+    color: #555;
+  }
+  
+  .admin-dashboard 
+  /* 筛选按钮样式 */
+  .admin-dashboard button {
+    padding: 8px 12px;
+    margin-right: 10px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 2px;
+    cursor: pointer;
+    font-size: 30px;
+  }
+  
+  .admin-dashboard button:hover {
+    background-color: #45a049;
+  }
+  
+
+  /* 表格样式 */
+  .admin-dashboard table {
+    width: 100%;
+    border-collapse: collapse;
+    box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1);
+    margin-top: 5px;
+  }
+  
+  .admin-dashboard table th, .admin-dashboard table td {
+    padding: 12px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+  }
+  
+  .admin-dashboard table th {
+    background-color: #3d6036;
+    color:white;
+  }
+  
+  .admin-dashboard table tr:nth-child(even) {
+    background-color: #f9f9f9;
+  }
+  
+  .admin-dashboard table tr:hover {
+    background-color: #f1f1f1;
+  }
+  
+  /* No pets found 样式 */
+  .no-pets-found {
+    text-align: center;
+    font-size: 18px;
+    color: #888;
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.8);
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* 表格单元格里的 no-pets-found 样式 */
+  td.no-pets-found {
+    background-color: #f9f9f9;
+    font-weight: bold;
+    color: #555;
+    text-align: center;
+    padding: 20px;
+  }
+  

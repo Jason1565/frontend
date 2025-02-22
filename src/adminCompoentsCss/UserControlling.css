@@ -1,0 +1,163 @@
+/* AdminUserManagement.css */
+
+.user-controlling {
+    padding: 20px;
+    font-family: Arial, sans-serif;
+    background-color: #f9f9f9;
+    width: 100%;
+  }
+  
+
+  
+  .user-list {
+    margin-top: 20px;
+    width: 100%;
+    overflow-x: auto;
+  }
+  
+  .user-controlling  table {
+    width: 100%;
+    border-collapse: collapse;
+    box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .user-controlling table th, table td {
+    padding: 12px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+  }
+  
+  .user-controlling table th {
+    background-color: #3d6036;
+    color: white;
+  }
+  
+  .user-controlling table tr:hover {
+    background-color: #f1f6ec;
+  }
+  
+  .user-controlling button {
+    padding: 6px 12px;
+    margin-right: 10px;
+    font-size: 14px;
+    border-radius: 4px;
+    border: 1px solid #ddd;
+    cursor: pointer;
+  }
+  
+  .user-controlling button:hover {
+    background-color: #3d6036;
+    color: white;
+  }
+  
+  .user-controlling button:nth-child(1) {
+    background-color: #007bff;
+    color: white;
+  }
+  
+  .user-controlling button:nth-child(2) {
+    background-color: #28a745;
+    color: white;
+  }
+  
+  .user-controlling button:nth-child(3) {
+    background-color: #dc3545;
+    color: white;
+  }
+  
+  .user-controlling button:nth-child(1):hover {
+    background-color: #0056b3;
+  }
+  
+  .user-controlling button:nth-child(2):hover {
+    background-color: #218838;
+  }
+  
+  .user-controlling button:nth-child(3):hover {
+    background-color: #c82333;
+  }
+  
+  .user-details {
+    margin-top: 20px;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 6px;
+    box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .user-details h2 {
+    padding-top: 0px;
+    color: #3d6036;
+  }
+  
+  .user-details p {
+    font-size: 16px;
+    margin: 5px 0;
+  }
+  /* 模态框样式 */
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-content {
+  background-color: white;
+  padding: 20px;
+  border-radius: 8px;
+  width: 400px;
+  box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.modal-content h2 {
+  margin-top: 0;
+  color: #3d6036;
+}
+
+.modal-content form {
+  display: flex;
+  flex-direction: column;
+}
+
+.modal-content label {
+  margin-bottom: 10px;
+}
+
+.modal-content input {
+  padding: 8px;
+  margin-top: 5px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.modal-content button {
+  padding: 8px 12px;
+  margin-top: 10px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.modal-content button[type="submit"] {
+  background-color: #28a745;
+  color: white;
+}
+
+.modal-content button[type="submit"]:hover {
+  background-color: #218838;
+}
+
+.modal-content button[type="button"] {
+  background-color: #dc3545;
+  color: white;
+}
+
+.modal-content button[type="button"]:hover {
+  background-color: #c82333;
+}

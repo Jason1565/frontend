@@ -1,0 +1,81 @@
+.sidebar {
+    width: 20%; /* 侧边栏宽度 */
+    height: 100vh; /* 高度为100% */
+    background-color:#3D6036 ;
+    color: white; /* 文字颜色 */
+    padding: 40px; /* 内边距 */
+    box-sizing: border-box; /* 盒模型 */
+    top: 0;
+    left: 0;
+    /* opacity: 0.9; */
+
+}
+
+/* Sidebar 标题样式 */
+.sidebar h1 {
+    font-size: 30px; /* 字体大小 */
+    margin-bottom: 20px; /* 下边距 */
+    text-align: center; /* 文字居中 */
+}
+
+/* 导航样式 */
+.sidebar nav {
+    display: flex;
+    flex-direction: column; /* 列布局 */
+}
+
+/* 列表样式 */
+.sidebar ul {
+    list-style: none; /* 移除列表项前的默认符号 */
+    padding: 0; /* 移除默认内边距 */
+    margin: 0; /* 移除默认外边距 */
+}
+
+/* 列表项样式 */
+.sidebar li {
+    margin-bottom: 10px; /* 列表项之间的间距 */
+}
+
+/* 链接样式 */
+.sidebar a {
+    font-size: 22px; /* 字体大小 */
+    text-decoration: none; /* 移除下划线 */
+    background-color:#F1F6EC;
+    color: #1B6C15; /* 链接文字颜色 */
+    font-weight: 800;
+    display: block; /* 块级元素，占满整个列表项宽度 */
+    padding: 20px; /* 内边距 */
+    border-radius: 20px; /* 圆角边框 */
+    border: 2px solid #8FBD8F;
+    width: 200px;
+    height:25px;
+    transition: background-color 0.3s; /* 背景颜色过渡动画 */
+    box-shadow: 0px 0px 2px 2px rgb(0,0,0);
+    display: flex; /* 使用 Flexbox 布局 */
+    align-items: center; /* 垂直居中 */
+    justify-content: center; /* 水平居中 */
+}
+
+/* 链接悬停样式 */
+.sidebar a:hover {
+    background-color:#F1F6EC; /* 悬停时的背景颜色 */
+}
+
+/* 返回按钮样式 */
+.sidebar button {
+    font-size: 18px;
+    background-color:#F1F6EC; /* 按钮背景颜色 */
+    color: #1B6C15; /* 按钮文字颜色 */
+    font-weight: 600;
+    height: 40px;
+    border: none; /* 无边框 */
+    padding: 10px; /* 内边距 */
+    border-radius: 15px; /* 圆角边框 */
+    cursor: pointer; /* 鼠标悬停时显示为手指指针 */
+    transition: background-color 0.3s; /* 背景颜色过渡动画 */
+}
+
+/* 返回按钮悬停样式 */
+.sidebar button:hover {
+    background-color:var(--button-hover-color); /* 悬停时的背景颜色 */
+}
