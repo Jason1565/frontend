@@ -103,7 +103,7 @@ function ApplicationhandlingPage() {
 
     return (
         <div style={{ float: 'right', position: 'relative' }}>
-            <h1>ApplicationhandlingPage</h1>
+            <h1>领养申请</h1>
             {underhandledPetsList}
         </div>
     )

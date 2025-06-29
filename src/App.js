@@ -19,8 +19,12 @@ import About from './components/About/About';
 import Contact from './components/Contact/Contact';
 import Signup from './components/Authorization/Signup';
 import PersonalCenter from './components/PersonalCenter/PersonalCenter';
+import Ency from './components/Encyclopedia/Ency';
+
 import AdminDashboard from './adminCompoents/AdminDashBoard/AdminDashBoard';
 import UserControlling from './adminCompoents/UserControlling/UserControlling';
+import AnncControlling from './adminCompoents/AnncControlling/AnncControlling'
+
 
 import Sidebar from './adminCompoents/Sidebar'
 import ApplicationhandlingPage from './adminCompoents/Applicationhandling/ApplicationhandlingPage'
@@ -57,6 +61,7 @@ function App() {
             <Route path="/addpetreview" element={<AddPetReviewPage />} />
             <Route path="/admindashboard" element={<AdminDashboard />} />
             <Route path="/usercontrolling" element={<UserControlling />} />
+            <Route path="/annccontrolling" element={<AnncControlling />} />
           </Routes>
         </div>
       </Router>
@@ -71,6 +76,7 @@ function App() {
             <Route path="/Information" element={<Information />} />
             {PetInformationRouteList}
             <Route path="/AddPetPage" element={<AddPetPage />} />
+            <Route path="/Ency" element={<Ency />} />
             <Route path="/login" element={<Login />} />
             <Route path="/about" element={<About />} />
             <Route path="/contact" element={<Contact />} />

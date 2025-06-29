@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { BASE_URL } from '../../config'; // 项目配置文件中的基础 URL
 import '../../compoentsCss/AnnouncementWindow.css'
 
 
@@ -9,16 +10,22 @@ function AnnouncementWindow() {
     const [isVisible, setIsVisible] = useState(true);
 
 
-    useEffect(() => {
-        setAnnouncements(
-            [
-                { "announcementId": 1, "title": "宠物领养活动", "content": "本周六将在公园举行宠物领养活动。", "createdBy": 2, "createdAt": "2025-01-19T14:01:09", "updatedAt": "2025-01-19T14:01:09", "isActive": 1 },
-                { "announcementId": 2, "title": "欢迎新成员", "content": "我们很高兴地欢迎您加入我们的社区。", "createdBy": 1, "createdAt": "2025-01-19T14:02:34", "updatedAt": "2025-01-19T14:02:34", "isActive": 1 },
-                { "announcementId": 3, "title": "欢迎下次光临", "content": "山水有相逢。", "createdBy": 1, "createdAt": "2025-01-19T14:03:13", "updatedAt": "2025-01-19T14:25:29", "isActive": 0 },
-                { "announcementId": 6, "title": "删除测试", "content": "DELTET ME!", "createdBy": 1, "createdAt": "2025-01-19T14:10:03", "updatedAt": "2025-01-19T14:10:03", "isActive": 1 }
-            ])
-
-    }, []);
+     // 从后端获取公告数据
+     useEffect(() => {
+        fetch(`${BASE_URL}/announcement/getActiveAnnc`) // 假设后端接口返回所有isActive为1的公告
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error(`Failed to fetch announcements: ${response.status}`);
+                }
+                return response.json();
+            })
+            .then(data => {
+                setAnnouncements(data); // 设置公告列表
+            })
+            .catch(error => {
+                console.error('Error fetching announcements:', error);
+            });
+    }, []); // 空依赖数组表示只在组件加载时执行一次
 
     const handleClose = () => {
         setIsVisible(false);
@@ -57,7 +64,7 @@ function AnnouncementWindow() {
                                     key={announcement.id}
                                     onClick={() => {
                                         setContent(announcement.content)
-                                        setUpdatedAt(announcement.updatedAt)
+                                        setUpdatedAt(announcement.createdAt)
                                     }}
                                 >
                                     {announcement.title}

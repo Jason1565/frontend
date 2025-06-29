@@ -15,7 +15,7 @@ function Logout() {
 
     
     return (
-        <li id="logout"><a onClick={Logout}>Logout</a></li>
+        <li id="logout"><a onClick={Logout}>退出</a></li>
     )
     }
     export default Logout;

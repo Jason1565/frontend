@@ -23,9 +23,9 @@ function Sidebar() {
                     <button onClick={() => { navigate(-1) }}>返回</button>
                     <li><a href="/AdminDashBoard">宠物信息</a></li>
                     <li><a href="/addpetreview">宠物添加</a></li>
-                    <li><a href="/applicationhandling">宠物申请</a></li>
+                    <li><a href="/applicationhandling">领养申请</a></li>
                     <li><a href="/usercontrolling">用户管理</a></li>
-                    <li><a href="/">公告管理</a></li>
+                    <li><a href="/annccontrolling">公告管理</a></li>
 
                     <button onClick={Logout}>退出登录</button>
 

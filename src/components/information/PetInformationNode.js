@@ -51,30 +51,96 @@ function PetInformationNode(props) {
     }
 
     const PetPage = filteredpet.map((pet) => (
-        <div>
-            <ul key={pet.petId}>
-                <li><h1>{pet.name}</h1></li>
-                <li><img src={pet.avatar} alt={pet.name}></img></li>
-                <li><span>宠物品种:{pet.species}</span></li>
-                <li><span>年龄:{pet.age}</span></li>
-                <li><span>性别:{pet.gender}</span></li>
-                <li><span>宠物描述:{pet.description}</span></li>
-                <div className="button">
+        // <div>
+        //     <ul key={pet.petId}>
+        //         <li><h1>{pet.name}</h1></li>
+        //         <li><img src={pet.avatar} alt={pet.name} style={{width: '100px', height: '100px'}}></img></li>
+        //         <li><span>宠物品种:{pet.species}</span></li>
+        //         <li><span>年龄:{pet.age}</span></li>
+        //         <li><span>性别:{pet.gender}</span></li>
+        //         <li><span>宠物描述:{pet.description}</span></li>
+        //         <div className="button">
+        //             {pet.status == 3 && (
+        //                 <button onClick={() => submitapply(pet.petId)}>
+        //                     <span>申请领养</span>
+        //                 </button>
+        //             )}
+        //         </div>
+        //         <div className="button">
+        //             {pet.status == 4 && (
+        //                 <button onClick={() => cancelapply(pet.petId)}>
+        //                     <span>取消申请领养</span>
+        //                 </button>
+        //             )}
+        //         </div>
+        //     </ul>
+        // </div>
+
+        <div
+            style={{
+                display: 'flex',
+                justifyContent: 'center', // 水平居中
+                alignItems: 'center', // 垂直居中
+                flexDirection: 'row', // 子元素横向排列
+                maxWidth: '800px', // 设置最大宽度
+                margin: '0 auto', // 水平居中
+                padding: '20px',
+                border: '1px solid #ddd', // 可选：添加边框
+                borderRadius: '8px', // 可选：添加圆角
+                backgroundColor: '#f9f9f9', // 可选：背景颜色
+            }}
+            >
+            <div
+                style={{
+                    display: 'flex',
+                    flexDirection: 'column', // 子元素纵向排列
+                    alignItems: 'center', // 垂直居中
+                    marginRight: '20px', // 图片与信息之间的间距
+                }}
+            >
+                <img
+                    src={pet.avatar}
+                    alt={pet.name}
+                    style={{
+                        width: '300px',
+                        height: '300px',
+                        objectFit: 'cover', // 确保图片比例适配
+                    }}
+                />
+            </div>
+            <div
+                style={{
+                    display: 'flex',
+                    flexDirection: 'column', // 子元素纵向排列
+                    flex: 1, // 占据剩余空间
+                }}
+            >
+                <h1>{pet.name}</h1>
+                <ul style={{ listStyle: 'none', padding: 0, margin: 0 }}>
+                    <li><span>宠物品种: {pet.species}</span></li>
+                    <li><span>年龄: {pet.age}</span></li>
+                    <li><span>性别: {pet.gender}</span></li>
+                    <li><span>宠物描述: {pet.description}</span></li>
+                </ul>
+                <div
+                    style={{
+                        marginTop: '20px',
+                    }}
+                >
                     {pet.status == 3 && (
                         <button onClick={() => submitapply(pet.petId)}>
                             <span>申请领养</span>
                         </button>
                     )}
-                </div>
-                <div className="button">
                     {pet.status == 4 && (
                         <button onClick={() => cancelapply(pet.petId)}>
                             <span>取消申请领养</span>
                         </button>
                     )}
                 </div>
-            </ul>
-        </div>
+            </div>
+            </div>
+
     ))
 
     return (
