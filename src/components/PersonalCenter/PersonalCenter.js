@@ -2,7 +2,6 @@ import React, { useState, useEffect, useMemo } from 'react';
 import { useNavigate } from 'react-router-dom';
 import '../../compoentsCss/PersonalCenter.css'
 import { BASE_URL } from '../../config';
-import personalavatar from '../../img/头像.svg'
 import AdoptedPetNode from './AdoptedPetNode';
 import UnAdoptedPetNode from './UnAdoptedPetNode';
 import AddUnderReviewNode from './AddUnderReviewNode';
@@ -121,7 +120,7 @@ function PersonalCenter() {
                 
                 <div className="personal-center">
                     <div className="info">
-                        <img src={personalavatar} alt="personalavatar" />
+                        <img src={userInformation.avatar} alt="头像" />
                         <p>Account: {userInformation.account}</p>
                         <p>Nickame: {userInformation.nickname}</p>
                         <p>Email: {userInformation.email}</p>

@@ -1,18 +1,75 @@
+.pet-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly; /* 让卡片均匀分布 */
+    gap: 20px; /* 卡片之间的间距 */
+}
+
 .pet-list {
     border: 1px solid #ccc;
     border-radius: 8px;
-    margin: 10px;
     padding: 15px;
     background-color: #f9f9f9d0;
     transition: transform 0.2s;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     display: flex;
     flex-direction: column;
-
+    align-items: center;
+    width: calc((100% - 200px) / 3);
+    gap: 10px;
+}
 
 .pet-list:hover {
     transform: scale(1.02);
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.pet-info {
+    text-align: center;
+    font-size: 20px;
+    font-weight: bold;
+    list-style-type: none;
+    padding: 0;
+  }
+
+.pet-avatar {
+    width: 200px; /* 调整图片大小 */
+    height: 200px;
+    border-radius: 50%; /* 圆形图片 */
+    object-fit: cover; /* 确保图片比例适配 */
+    margin-bottom: 10px;
+    margin:0 auto;
+}
+
+.adopt-button{
+    background-color:var(--button-color);
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+    transition: background-color 0.3s;
+    width:300px;
+    margin: 0 auto;
+}
+
+
+
+
+
+
+
+.pet-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px; /* 调整动物节点之间的间距 */
+}
+
+.pet-node {
+    width: calc((100% - 40px) / 3); /* 一行显示三个，减去间距 */
+    text-align: center;
 }
 
 ul {
@@ -31,17 +88,7 @@ img {
     border-radius: 8px;
 }
 
-button{
-    background-color:var(--button-color);
-    color: white;
-    border: none;
-    padding: 10px 20px;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 16px;
-    font-weight: bold;
-    transition: background-color 0.3s;
-}
+
 
 button:hover {
     background-color: var(--button-hover-color);
@@ -66,11 +113,10 @@ span {
 }
 
 .pet-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-    gap: 2rem;
-    padding: 2rem;
-  }
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px; /* 调整动物节点之间的间距 */
+}
   
   .pet-card {
     background: #fff;
@@ -100,9 +146,7 @@ span {
     margin: 0;
   }
   
-  .pet-avatar {
-    padding: 1rem;
-  }
+  
   
   .pet-image {
     width: 100%;
@@ -111,12 +155,6 @@ span {
     border-radius: 10px;
     display: block;
     margin: 0 auto;
-  }
-  
-  .pet-info {
-    padding: 1.5rem;
-    grid-template-columns: repeat(2, 1fr); /* 两列布局，紧凑排列 */
-    gap: 5px; /* 调整列间距 */
   }
   
   .info-row {
@@ -175,5 +213,3 @@ span {
   .secondary:hover {
     background: #c0392b;
   }
-
-}   

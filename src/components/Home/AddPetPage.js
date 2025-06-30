@@ -9,7 +9,6 @@ import { BASE_URL} from '../../config';
 function AddPetPage() {
     //const location = useLocation();
     const { globalState, editCount, setEditCount } = useGlobalState();
-
     const navigate = useNavigate();
     const [location, setLocation] = useState(useLocation());
     console.log(location.state?.position);
@@ -21,19 +20,46 @@ function AddPetPage() {
     const [kind, setKind] = useState("cat");
     const [gender, setGender] = useState("male");
     const [description, setDescription] = useState("");
-
-
     const [file, setFile] = useState(null);
 
     const handleFileChange = (event) => {
         setFile(event.target.files[0]);
-      };
+        setAvatar(event.target.files[0]);
+    };
 
-    function addPet(event) {
-        console.log(name, age, species, gender, description);
+    async function uploadImage(file) {
+        const formData = new FormData();
+        formData.append('image', file);
 
+        try {
+            const response = await fetch('http://localhost:8080/upload', {
+                method: 'POST',
+                body: formData,
+            });
+            const data = await response.text(); // 后端返回的是字符串形式的 URL
+            return data;
+        } catch (error) {
+            console.error('Error uploading file:', error);
+            return null;
+        }
+    }
+
+    async function addPet(event) {
+        // console.log(name, age, species, gender, description);
         event.preventDefault();
-        fetch(`${BASE_URL}/pet/insert/?name=` + name + "&avatar=" + avatar + "&age="
+
+        if (!file) {
+            console.log("请选择一张图片");
+            return;
+        }
+
+        const imageUrl = await uploadImage(file);
+        if (!imageUrl) {
+            alert("Image upload failed.");
+            return;
+        }
+
+        fetch(`${BASE_URL}/pet/insert/?name=` + name + "&avatar=" + imageUrl + "&age="
             + age + "&species=" + species+ "&kind=" + kind + "&gender=" + gender + "&description="
             + description + "&lng=" + location.state?.position.lng + "&lat=" + location.state?.position.lat 
             +"&status=1" + "&belonging=" + localStorage.getItem("userId"),
@@ -42,20 +68,9 @@ function AddPetPage() {
                 console.log("添加成功,待管理员审核！！！");
                 setEditCount(editCount + 1);
             })
-
-
-            // const formData = new FormData();
-            // formData.append('file', file);
-            // try {
-            //   const response = fetch('${BASE_URL}/files/upload', { // 假设Spring Boot应用运行在8080端口
-            //     method: 'POST',
-            //     body: formData,
-            //   });
-            //   const data = response.json();
-            //   console.log(data);
-            // } catch (error) {
-            //   console.error('Error uploading file:', error);
-            // }
+            .catch(error => {
+                console.error('添加失败', error);
+            });
 
         setName("");
         setAge("");
@@ -63,8 +78,9 @@ function AddPetPage() {
         setSpecies("");
         setGender("");
         setDescription("");
+        setFile(null);
 
-        alert("Pet added successfully!");
+        console.log("Pet added successfully!");
         navigate("/");
     }
 
@@ -73,15 +89,15 @@ function AddPetPage() {
 
     return (
         <div class="AddPetPage" style={{ marginTop: "80px" }}>
-            <form>
+            <form onSubmit={addPet}>
                 <h1>Add a Pet</h1>
                 <label>Name:</label>
                 <input type="text" value={name} onChange={(event) => { setName(event.target.value) }}></input><br></br>
 
                 <label>Avatar:(请输入图像链接)</label>
                 
-                    {/* <input type="file" name="file" onChange={handleFileChange} /> */}
-                    <input type="text" value={avatar} onChange={(event) => { setAvatar(event.target.value) }}></input>
+                <input type="file" name="file" onChange={handleFileChange} accept="image/*" />
+                {/* <input type="text" value={avatar} onChange={(event) => { setAvatar(event.target.value) }}></input> */}
                 
                 <br></br>
 

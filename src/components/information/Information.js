@@ -33,8 +33,10 @@ function Information() {
 
     if (token === '1') {
         return (
-            <div class="infomation-container" style={{ marginTop: '80px',height:'50rem', overflowY: 'auto' }}>
-                {PetList}
+            <div className="infomation-container" style={{ marginTop: '80px',height:'50rem', overflowY: 'auto' }}>
+                <div className="pet-container">
+                    {PetList}
+                </div>
             </div>
         );
     }

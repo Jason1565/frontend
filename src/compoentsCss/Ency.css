@@ -1,36 +1,92 @@
-.app-container {
-  font-family: Arial, sans-serif;
+.encyclopedia-container {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  background-size: cover;
+  background-position: center;
+  transition: background-image 0.5s ease-in-out;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.controls {
+  position: absolute;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.arrow {
+  background-color: rgba(135, 231, 135, 0.9);
+  border: none;
+  color: white;
+  font-size: 2em;
+  padding: 15px;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.arrow:hover {
+  background-color: rgba(255, 255, 255, 0.5);
+}
+
+.info-cards {
+  display: flex;
+  width: 90%;
   max-width: 1200px;
+  height: 70%;
   margin: 0 auto;
+}
+
+.card {
+  background-color: rgba(200, 255, 200, 0.7); /* 浅绿色透明卡片 */
+  padding: 20px;
+  border-radius: 10px;
+  overflow-y: auto;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.card.left {
+  flex: 1;
+  margin-right: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.card.right {
+  flex: 3;
   padding: 20px;
 }
 
-.pet-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-  gap: 20px;
+.card h1 {
+  font-size: 2.5em;
+  margin-bottom: 10px;
+  color: #333;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
 }
 
-.pet-card {
-  border: 1px solid #e0e0e0;
-  border-radius: 8px;
+.card p {
+  margin-bottom: 10px;
+  line-height: 1.5;
+  color: #333;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+  font-size: 1.1em;
+}
+
+.loading, .error {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  font-size: 1.5em;
+  background-color: rgba(0, 0, 0, 0.7);
   padding: 20px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-}
-
-.pet-img {
-  max-width: 100%;
-  height: auto;
-  border-radius: 8px;
-}
-
-.loading {
-  text-align: center;
-  padding: 20px;
-}
-
-.error {
-  color: red;
-  text-align: center;
-  padding: 20px;
+  border-radius: 10px;
 }

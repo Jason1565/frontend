@@ -2,6 +2,7 @@ import React from 'react';
 import { useGlobalState } from '../../GlobalState'
 import { BASE_URL } from './../../config'
 import { useNavigate } from 'react-router-dom';
+import '../../compoentsCss/PetNode.css';
 
 function PetInformationNode(props) {
 
@@ -82,8 +83,8 @@ function PetInformationNode(props) {
                 justifyContent: 'center', // 水平居中
                 alignItems: 'center', // 垂直居中
                 flexDirection: 'row', // 子元素横向排列
-                maxWidth: '800px', // 设置最大宽度
-                margin: '0 auto', // 水平居中
+                maxWidth: '50%', // 设置最大宽度
+                margin: 'auto auto', // 水平居中
                 padding: '20px',
                 border: '1px solid #ddd', // 可选：添加边框
                 borderRadius: '8px', // 可选：添加圆角
@@ -128,7 +129,7 @@ function PetInformationNode(props) {
                     }}
                 >
                     {pet.status == 3 && (
-                        <button onClick={() => submitapply(pet.petId)}>
+                        <button class="adopt-button" onClick={() => submitapply(pet.petId)}>
                             <span>申请领养</span>
                         </button>
                     )}
@@ -144,7 +145,7 @@ function PetInformationNode(props) {
     ))
 
     return (
-        <div class="pet-list" style={{ marginTop: '50px' }}>
+        <div class="pet-container" style={{ marginTop: '50px' }}>
             {PetPage}
         </div>
     )
