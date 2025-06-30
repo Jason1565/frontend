@@ -85,10 +85,6 @@ function Ency() {
                             <img
                                 src={encyInfo.imageUrl}
                                 alt={encyInfo.commonName}
-                                onError={(e) => {
-                                    e.target.src =
-                                        'https://via.placeholder.com/150?text=Image+Not+Found';
-                                }}
                             />
                         </div>
                     )}
