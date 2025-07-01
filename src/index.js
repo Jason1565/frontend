@@ -1,5 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
+import { BrowserRouter } from 'react-router-dom'; // 新增导入
 import './index.css';
 import './compoentsCss/Global.css';
 import App from './App';
@@ -8,10 +9,14 @@ import { GlobalProvider } from './GlobalState';
 const root = ReactDOM.createRoot(document.getElementById('root'));
 
 
+
 root.render(
-    <GlobalProvider>
-        <App />
-    </GlobalProvider>
+    <BrowserRouter>
+        <GlobalProvider>
+            <App />
+        </GlobalProvider>
+    </BrowserRouter>
+    
 );
 
 // If you want to start measuring performance in your app, pass a function

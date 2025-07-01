@@ -23,12 +23,13 @@ import Ency from './components/Encyclopedia/Ency';
 
 import AdminDashboard from './adminCompoents/AdminDashBoard/AdminDashBoard';
 import UserControlling from './adminCompoents/UserControlling/UserControlling';
-import AnncControlling from './adminCompoents/AnncControlling/AnncControlling'
+import AnncControlling from './adminCompoents/AnncControlling/AnncControlling';
 
 
-import Sidebar from './adminCompoents/Sidebar'
-import ApplicationhandlingPage from './adminCompoents/Applicationhandling/ApplicationhandlingPage'
-import AddPetReviewPage from './adminCompoents/AddPetReview/AddPetReviewPage'
+import Sidebar from './adminCompoents/Sidebar';
+import ApplicationhandlingPage from './adminCompoents/Applicationhandling/ApplicationhandlingPage';
+import AddPetReviewPage from './adminCompoents/AddPetReview/AddPetReviewPage';
+import DeepSeekChat from './components/DeepSeekChat';
 
 
 function App() {
@@ -68,7 +69,7 @@ function App() {
     )
   else
     return (
-      <Router>
+      
         <div class="App">
           <Topbar />
           <Routes>
@@ -83,8 +84,9 @@ function App() {
             <Route path="/signup" element={<Signup />} />
             <Route path="/personalcenter" element={<PersonalCenter />} />
           </Routes>
+          {token && <DeepSeekChat />}
         </div>
-      </Router>
+      
     );
 
 
