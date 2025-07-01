@@ -84,7 +84,7 @@ function PetInformationNode(props) {
                 alignItems: 'center', // 垂直居中
                 flexDirection: 'row', // 子元素横向排列
                 maxWidth: '50%', // 设置最大宽度
-                margin: 'auto auto', // 水平居中
+                margin: '50px auto', // 水平居中
                 padding: '20px',
                 border: '1px solid #ddd', // 可选：添加边框
                 borderRadius: '8px', // 可选：添加圆角

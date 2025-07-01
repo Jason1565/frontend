@@ -1,4 +1,5 @@
 import React from 'react';
+import userAvatar from '../../img/头像.svg'
 
 function Contact() {
     return (
@@ -46,29 +47,31 @@ function Contact() {
                     <h2 style={{ color: '#555', marginBottom: '20px', borderBottom: '1px solid #ddd', paddingBottom: '5px' }}>团队成员</h2>
                     
                     <div className="member" style={{ display: 'flex', marginBottom: '20px', alignItems: 'center', backgroundColor: '#fff', padding: '10px', borderRadius: '5px', boxShadow: '0 2px 4px rgba(0,0,0,0.1)' }}>
-                        <div style={{ width: '50px', height: '50px', backgroundColor: '#ddd', borderRadius: '50%', marginRight: '15px' }}></div>
+                        <img src={userAvatar} alt="团队成员头像" style={{ width: '50px', height: '50px', borderRadius: '50%', marginRight: '15px' }} />
                         <div>
                             <h3 style={{ color: '#333', margin: '0 0 5px 0' }}>陈开</h3>
                             <p style={{ color: '#666', margin: '0 0 5px 0' }}>产品经理</p>
-                            <p style={{ color: '#888', margin: '0' }}>zhangsan@example.com</p>
+                            <p style={{ color: '#888', margin: '0' }}>chenkai@example.com</p>
                         </div>
                     </div>
                     
                     <div className="member" style={{ display: 'flex', marginBottom: '20px', alignItems: 'center', backgroundColor: '#fff', padding: '10px', borderRadius: '5px', boxShadow: '0 2px 4px rgba(0,0,0,0.1)' }}>
-                        <div style={{ width: '50px', height: '50px', backgroundColor: '#ddd', borderRadius: '50%', marginRight: '15px' }}></div>
+                        <img src={userAvatar} alt="团队成员头像" style={{ width: '50px', height: '50px', borderRadius: '50%', marginRight: '15px' }} />
                         <div>
                             <h3 style={{ color: '#333', margin: '0 0 5px 0' }}>董晓欧 陈厚民</h3>
                             <p style={{ color: '#666', margin: '0 0 5px 0' }}>前端开发</p>
-                            <p style={{ color: '#888', margin: '0' }}>lisi@example.com</p>
+                            <p style={{ color: '#888', margin: '0' }}>dongxaioou@example.com</p>
+                            <p style={{ color: '#888', margin: '0' }}>chenhoumin@example.com</p>
                         </div>
                     </div>
                     
                     <div className="member" style={{ display: 'flex', alignItems: 'center', backgroundColor: '#fff', padding: '10px', borderRadius: '5px', boxShadow: '0 2px 4px rgba(0,0,0,0.1)' }}>
-                        <div style={{ width: '50px', height: '50px', backgroundColor: '#ddd', borderRadius: '50%', marginRight: '15px' }}></div>
+                        <img src={userAvatar} alt="团队成员头像" style={{ width: '50px', height: '50px', borderRadius: '50%', marginRight: '15px' }} />
                         <div>
                             <h3 style={{ color: '#333', margin: '0 0 5px 0' }}>郭嘉豪 吴津杰</h3>
                             <p style={{ color: '#666', margin: '0 0 5px 0' }}>后端开发</p>
-                            <p style={{ color: '#888', margin: '0' }}>wangwu@example.com</p>
+                            <p style={{ color: '#888', margin: '0' }}>guojiahao@example.com</p>
+                            <p style={{ color: '#888', margin: '0' }}>wujinjie@example.com</p>
                         </div>
                     </div>
                 </div>

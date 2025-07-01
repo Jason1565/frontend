@@ -81,7 +81,7 @@ function ApplicationhandlingPage() {
         fetch(
             `${BASE_URL}/pet/insert/?&name=${name}&avatar=${avatar}&age=${age}&species=${species}&kind=${kind}&gender=${gender}&description=${description}&lng=${parseFloat(position.lng).toFixed(5)}&lat=${parseFloat(position.lat).toFixed(5)}&status=3`,
             { method: 'POST' },
-        );
+        );  
 
     }, [update]);
 
