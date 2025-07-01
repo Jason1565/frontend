@@ -24,7 +24,7 @@ function Topbar() {
                     <li id="personalcenter"><a href="/personalcenter">☺ 个人中心</a></li>
 
                     {localStorage.getItem('token') === "1" ?
-                        <p>欢迎 {localStorage.getItem('account')}!('・ω・')</p> :
+                        <p >欢迎 {localStorage.getItem('account')}!('・ω・')</p> :
                         null}
 
                     {localStorage.getItem('token') === "1" ?

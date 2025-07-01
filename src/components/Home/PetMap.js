@@ -57,7 +57,7 @@ function PetMap() {
 
 
     return (
-        <div>
+        <div >
             <Map
                 center={{ lng: 121.399, lat: 31.322 }}
                 zoom="17"

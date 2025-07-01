@@ -9,8 +9,9 @@
 
 /* 信息容器样式 */
 .personal-center .info {
-    display: block;
+    display: flex;
     justify-content: flex-start; /* 水平起始对齐 */
+    gap:16px;
     margin-top: 80px; /* 保持与内联样式一致，也可以移除内联样式，直接在这里设置 */
     background-color: rgba(226, 249, 220, 0.482); /* 背景颜色 */
     padding: 20px; /* 内边距 */
@@ -26,3 +27,6 @@
     font-weight: bold; /* 加粗字体 */
 }
 
+.info-text {
+    flex: 1; /* 确保信息部分占据剩余空间 */
+}

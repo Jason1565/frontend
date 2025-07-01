@@ -121,10 +121,12 @@ function PersonalCenter() {
                 <div className="personal-center">
                     <div className="info">
                         <img src={userInformation.avatar} alt="头像" />
-                        <p>Account: {userInformation.account}</p>
-                        <p>Nickame: {userInformation.nickname}</p>
-                        <p>Email: {userInformation.email}</p>
-                        <p>Phone: {userInformation.phone}</p>
+                        <div class="info-text">
+                            <p>Account: {userInformation.account}</p>
+                            <p>Nickame: {userInformation.nickname}</p>
+                            <p>Email: {userInformation.email}</p>
+                            <p>Phone: {userInformation.phone}</p>
+                        </div>
                     </div>
 
                     {adoptedPetsLists.length > 0 &&
